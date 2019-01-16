@@ -1,9 +1,6 @@
 package com.exam.autotable.service;
 
-import com.exam.autotable.domain.Period;
-import com.exam.autotable.domain.Schedule;
-import com.exam.autotable.domain.Subject;
-import com.exam.autotable.domain.Table;
+import com.exam.autotable.domain.*;
 import com.exam.autotable.repository.SubjectRepository;
 import com.exam.autotable.repository.TableRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +40,10 @@ public class TimeTableService {
 
             List<Schedule> scheduleList = s.getScheduleList();
             // TODO : 시간표 생성 Logic
+            scheduleList.stream().forEach(sh -> {
+                List<Time> timeList = sh.getTimeList();
 
+            });
             return true;
         }).collect(Collectors.toList());
 
